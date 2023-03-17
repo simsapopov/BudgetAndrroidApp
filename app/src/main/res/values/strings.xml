@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Budget</string>
+    <string name="Update_Question">Update this item?</string>
+    <string name="enter_amount">Enter amount</string>
+    <string name="enter_note">Enter Note</string>
+    <string name="Expenseadded">Expense item added successfully</string>
+    <string name="Err">Error</string>
+    <string name="AmoutReq">Amount is required</string>
+    <string name="NoteReq">Note is required</string>
+    <string name="SelecetvalidItem">Select a valid item</string>
+    <string name="databaseURL">https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/</string>
+    <string-array name="items">
+        <item>Select item</item>
+        <item>Transport</item>
+        <item>Food</item>
+        <item>House</item>
+        <item>Entertainment</item>
+        <item>Education</item>
+        <item>Charity</item>
+        <item>Personal</item>
+        <item>Travel</item>
+        <item>Health</item>
+        <item>Other</item>
+    </string-array>
+</resources>
