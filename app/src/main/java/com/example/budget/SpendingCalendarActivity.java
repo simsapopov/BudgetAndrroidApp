@@ -115,6 +115,70 @@ public class SpendingCalendarActivity extends AppCompatActivity {
         final EditText month = myView.findViewById(R.id.month_input);
         final EditText year = myView.findViewById(R.id.year_input);
         final Button submit = myView.findViewById(R.id.submit_button);
+        final EditText notes = myView.findViewById(R.id.noteForDelete);
+        final Button deleteBtn = myView.findViewById(R.id.delete_btn);
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String date_ = date.getText().toString();
+                if(date_.length()<2){
+                    date_ = "0"+date_;
+                }
+                String month_ = month.getText().toString();
+                if(month_.length()<2){
+                    month_ = "0"+month_;
+                }
+                String year_ = year.getText().toString();
+
+
+                String date = ""+date_+"-"+month_+"-"+year_;
+                GetRef.deleteExpenseItemByDateAndNotes(date,notes.getText().toString());
+                Query query = GetRef.getQueryByDate(date);
+                query.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        myData.clear();
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                            Data data = dataSnapshot.getValue(Data.class);
+                            myData.add(data);
+                        }
+                        todayItemsAdapter.notifyDataSetChanged();
+                        int totalAmmount =0;
+                        for (DataSnapshot ds: snapshot.getChildren()){
+                            Map<String,Object> map = (Map<String, Object>)ds.getValue();
+                            Object total=map.get("amount");
+                            int flag=Integer.parseInt(String.valueOf(total));
+                            totalAmmount+=flag;
+
+                        }
+                        StringBuilder spendingMsg= new StringBuilder();
+                        spendingMsg.append("Total amount spent on ");
+                        spendingMsg.append(date);
+
+                        spendingMsg.append(" is ");
+                        spendingMsg.append(totalAmmount);
+                        TextView textView = findViewById(R.id.TotalAmount);
+                        textView.setText(spendingMsg.toString());
+
+
+
+
+                        dialog.dismiss();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+            }
+
+        });
+
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

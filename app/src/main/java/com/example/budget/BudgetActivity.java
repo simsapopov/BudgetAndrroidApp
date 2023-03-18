@@ -25,11 +25,9 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
@@ -176,6 +174,7 @@ public class BudgetActivity extends AppCompatActivity {
                     epoch.setDate(0);
                     DateTime now = new DateTime();
                     Months months = Months.monthsBetween(epoch,now);
+
                     Data data = new Data(budgetItem,id,date,null,Integer.parseInt(budgetAmount),months.getMonths());
                     budgetRef.child(id).setValue(data).addOnCompleteListener(task -> {
                         if(task.isSuccessful()){

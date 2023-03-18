@@ -7,8 +7,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter a date:"
-        android:textSize="24sp"
+        android:text="Enter a only date if you want to check expenses "
+        android:textSize="20sp"
         android:layout_margin="16dp"/>
 
     <LinearLayout
@@ -52,6 +52,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="If you want to delete expense record fill the date and note"
+        android:textSize="20sp"
+        android:layout_margin="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/noteForDelete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter the note from the expense record"
+
+
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
         />
