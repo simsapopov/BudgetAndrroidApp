@@ -18,8 +18,7 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
     private String item="";
     private int amount =0;
     private List<Data> myDataList;
-    private int adata=100;
-
+   
 
 
     public TodayItemsAdapter(Context mContext, List<Data> myDataList) {
