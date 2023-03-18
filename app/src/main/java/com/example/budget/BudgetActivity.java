@@ -51,7 +51,7 @@ public class BudgetActivity extends AppCompatActivity {
     private String post_key=" ";
     private String item="";
     public int totalAmount=0;
-    public int simsataweeee = 1;
+
     private int amount =0;
 
 
