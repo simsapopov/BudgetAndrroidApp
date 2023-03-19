@@ -22,7 +22,7 @@
     <string name="enter_Month">Въведете месец</string>
     <string name="amount_spent_on_datte">Изразходената сума на </string>
     <string name="is" >е </string>
-    <string name="item_">Категория-</string>
+    <string name="item_">Категория:</string>
     <string name="Amount_Todays_Item_adapter">Сума: </string>
     <string name="on_Todays_Item_adapter">На: </string>
     <string name="note_Today_Items_adapter">Бележка - "</string>

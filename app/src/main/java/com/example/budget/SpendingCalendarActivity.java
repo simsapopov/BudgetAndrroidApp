@@ -279,3 +279,5 @@ public class SpendingCalendarActivity extends AppCompatActivity {
         FirebaseRecyclerOptions<Data> options = new FirebaseRecyclerOptions.Builder<Data>().setQuery(budgetRef,Data.class).build();
     }
 }
+
+//TODO make text in String.xml to enable Bulgarian

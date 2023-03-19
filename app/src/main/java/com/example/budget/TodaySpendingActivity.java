@@ -178,7 +178,44 @@ public class TodaySpendingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //TODO The problem with mixing languages is here
                 String Amount=amount.getText().toString();
-                String Item=itemSpinner.getSelectedItem().toString();
+                String Item="";
+                switch (itemSpinner.getSelectedItem().toString()){
+                    case "Транспорт":
+
+                        Item="Transport";
+
+                        break;
+                    case "Храна":
+                         Item="Food";
+                        break;
+                    case "За дома":
+                         Item="House";
+                        break;
+                    case "Забавление":
+                         Item="Entertainment";
+                        break;
+                 case "Образование":
+                     Item="Education";
+                          break;
+                    case "Благотворителност":
+                        Item="Charity";
+                    break;
+                  case "Лични разходи":
+                 Item = "Personal";
+                        break;
+                 case "Пътувания":
+                   Item="Travel";
+                    break;
+                    case "Здравни разходи":
+                    Item = "Health";
+                        break;
+                   case "Други":
+                    Item="Other";
+                        break;
+                    default:
+                        Item=itemSpinner.getSelectedItem().toString();
+
+                }
                 String notes = note.getText().toString();
 
                 if(TextUtils.isEmpty(Amount)){
