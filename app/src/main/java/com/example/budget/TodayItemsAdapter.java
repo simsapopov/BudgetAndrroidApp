@@ -37,40 +37,53 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             final Data data = myDataList.get(position);
-            holder.item.setText("Item: "+ data.getItem());
-            holder.amount.setText("Amount: "+data.getAmount());
-            holder.date.setText("On: "+data.getDate());
-            holder.notes.setText("Note: "+data.getNotes());
+            //TODO Problem with mixing languages
+            holder.amount.setText(mContext.getString(R.string.Amount_Todays_Item_adapter)+data.getAmount());
+            holder.date.setText(mContext.getString(R.string.on_Todays_Item_adapter)+data.getDate());
+            holder.notes.setText(mContext.getString(R.string.note_Today_Items_adapter)+data.getNotes());
         switch (data.getItem()){
             case "Transport":
+
                 holder.imageView.setImageResource(R.drawable.ic_baseline_directions_bus_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Transport));
                 break;
             case "Food":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_fastfood_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Food));
                 break;
             case "House":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_home_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.House));
                 break;
             case "Entertainment":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_theater_comedy_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Entertainment));
                 break;
             case "Education":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_school_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Education));
                 break;
             case "Charity":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_emoji_people_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Charity));
                 break;
             case "Personal":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_person_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Personal));
                 break;
             case "Travel":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_airplanemode_active_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Travel));
                 break;
             case "Health":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_heart_broken_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Health));
+                
+                
                 break;
             case "Other":
                 holder.imageView.setImageResource(R.drawable.ic_baseline_menu_24);
+                holder.item.setText(mContext.getString(R.string.item_)+ mContext.getString(R.string.Other));
                 break;
 
 

@@ -176,6 +176,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //TODO The problem with mixing languages is here
                 String Amount=amount.getText().toString();
                 String Item=itemSpinner.getSelectedItem().toString();
                 String notes = note.getText().toString();

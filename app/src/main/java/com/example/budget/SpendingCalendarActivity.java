@@ -3,6 +3,7 @@ package com.example.budget;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -122,17 +123,31 @@ public class SpendingCalendarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String date_ = date.getText().toString();
-                if(date_.length()<2){
+                if(date_.isEmpty()){
+                    date.setError(getString(R.string.enter_Date));
+                }
+                if(date_.length()<2&&!date_.isEmpty()){
                     date_ = "0"+date_;
                 }
+                String noteForDelete= notes.getText().toString();
+                if(TextUtils.isEmpty(noteForDelete)){
+                    notes.setError(getString(R.string.enter_Note_Delete));
+                }
                 String month_ = month.getText().toString();
+                if(month_.isEmpty()){
+                    month.setError(getString(R.string.enter_Month));
+                }
                 if(month_.length()<2){
                     month_ = "0"+month_;
                 }
-                String year_ = year.getText().toString();
 
+                String year_ = year.getText().toString();
+                if(year_.isEmpty()){
+                    year.setError(getString(R.string.enter_Year));
+                }
 
                 String date = ""+date_+"-"+month_+"-"+year_;
+                if(!year_.isEmpty()&&!date_.isEmpty()&&!month_.isEmpty()&&!noteForDelete.isEmpty()){
                 GetRef.deleteExpenseItemByDateAndNotes(date,notes.getText().toString());
                 Query query = GetRef.getQueryByDate(date);
                 query.addValueEventListener(new ValueEventListener() {
@@ -153,10 +168,12 @@ public class SpendingCalendarActivity extends AppCompatActivity {
 
                         }
                         StringBuilder spendingMsg= new StringBuilder();
-                        spendingMsg.append("Total amount spent on ");
+                        spendingMsg.append(getString(R.string.amount_spent_on_datte));
+                        spendingMsg.append(" ");
                         spendingMsg.append(date);
-
-                        spendingMsg.append(" is ");
+                        spendingMsg.append(" ");
+                        spendingMsg.append(getString(R.string.is));
+                        spendingMsg.append(" ");
                         spendingMsg.append(totalAmmount);
                         TextView textView = findViewById(R.id.TotalAmount);
                         textView.setText(spendingMsg.toString());
@@ -171,7 +188,7 @@ public class SpendingCalendarActivity extends AppCompatActivity {
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
-                });
+                });}
 
 
             }
@@ -225,9 +242,11 @@ public class SpendingCalendarActivity extends AppCompatActivity {
                             }
                             StringBuilder spendingMsg= new StringBuilder();
                             spendingMsg.append(getString(R.string.amount_spent_on_datte));
+                            spendingMsg.append(" ");
                             spendingMsg.append(date);
-
+                            spendingMsg.append(" ");
                             spendingMsg.append(getString(R.string.is));
+                            spendingMsg.append(" ");
                             spendingMsg.append(totalAmmount);
                             TextView textView = findViewById(R.id.TotalAmount);
                             textView.setText(spendingMsg.toString());

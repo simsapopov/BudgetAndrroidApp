@@ -14,13 +14,30 @@
     <string name="amount_allocateed_BudgetActivity">Сума: лв</string>
     <string name="Budget_Item">Категория: </string>
     <string name="on_Date">Дата: </string>
-    <string name="add_budget">Add Budget</string>
+    <string name="add_budget">Добавяне на бюджет</string>
     <string name="save">Запази</string>
     <string name="cancel">Назад</string>
-    <string name="enter_Date">Enter date</string>
-    <string name="enter_Month">Enter month</string>
-    <string name="amount_spent_on_datte">"Total amount spent on "</string>
-    <string name="is">\" is \"</string>
+    <string name="enter_Year">Въведете година</string>
+    <string name="enter_Date">Въведете дата</string>
+    <string name="enter_Month">Въведете месец</string>
+    <string name="amount_spent_on_datte">Изразходената сума на </string>
+    <string name="is" >е </string>
+    <string name="item_">Категория-</string>
+    <string name="Amount_Todays_Item_adapter">Сума: </string>
+    <string name="on_Todays_Item_adapter">На: </string>
+    <string name="note_Today_Items_adapter">Бележка - "</string>
+    <string name="Transport">Транспорт </string>
+    <string name="Food">Храна: </string>
+    <string name="House">За дома: </string>
+    <string name="Entertainment">Забавление </string>
+    <string name="Education">Образование </string>
+    <string name="Charity">Благотворителност </string>
+    <string name="Personal">Лични разходи </string>
+    <string name="Travel">Пътувания </string>
+    <string name="Health">Здравни разходи </string>
+    <string name="Other">Други </string>
+    <string name="Amount_spent_on_Day">Сума изхарчена за </string>
+    <string name="enter_Note_Delete">Enter note to delete expense</string>
     <string-array name="items">
         <item>Категория</item>
         <item>Транспорт</item>
