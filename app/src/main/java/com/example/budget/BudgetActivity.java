@@ -211,11 +211,10 @@ public class BudgetActivity extends AppCompatActivity {
 
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position,@NonNull Data model){
-
-
                 totalAmountChange(budgetRef,totalBudgetAmountTextView);
                 holder.setItemAmount("Allocated amount: $"+ model.getAmount());
                 holder.setDate("On: "+ model.getDate());
+
                 holder.setItemName("BudgetItem: "+model.getItem());
                 holder.notes.setVisibility(View.GONE);
                 switch (model.getItem()){
@@ -267,6 +266,7 @@ public class BudgetActivity extends AppCompatActivity {
             @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieve_layout,parent,false);
                 return new MyViewHolder(view);
 

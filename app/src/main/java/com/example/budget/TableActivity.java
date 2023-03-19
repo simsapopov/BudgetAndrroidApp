@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,11 +20,11 @@ import java.util.List;
 import java.util.Map;
 
 public class TableActivity extends AppCompatActivity {
-
+    private FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_table);
         NavigationBarView bottomNavigationView=findViewById(R.id.bottomNavigationView);
 
@@ -62,7 +63,7 @@ public class TableActivity extends AppCompatActivity {
         AddTotable(GetRef.getBudgetQuery("Health"),findViewById(R.id.HealthBudget));
         AddTotable(GetRef.getBudgetQuery("Travel"),findViewById(R.id.TravelBudget));
         AddTotable(GetRef.getBudgetQuery("Education"),findViewById(R.id.EducationBudget));
-       // AddTotable(GetRef.getBudgetQuery("Entertainment"),findViewById(R.id.EnterttainmentBudget));
+        AddTotable(GetRef.getBudgetQuery("Entertainment"),findViewById(R.id.EnterttainmentBudget));
 
         AddTotable(GetRef.getExpenseQuery("Transport"),findViewById(R.id.transportationExp));
         AddTotable(GetRef.getExpenseQuery("House"),findViewById(R.id.HouseExp));
@@ -73,7 +74,7 @@ public class TableActivity extends AppCompatActivity {
         AddTotable(GetRef.getExpenseQuery("Health"),findViewById(R.id.HealthExp));
         AddTotable(GetRef.getExpenseQuery("Travel"), findViewById(R.id.TravelExp));
         AddTotable(GetRef.getExpenseQuery("Education"),findViewById(R.id.EducationExp));
-      //  AddTotable(GetRef.getExpenseQuery("Entertainment"),findViewById(R.id.Enterexpens));
+        AddTotable(GetRef.getExpenseQuery("Entertainment"),findViewById(R.id.Enterexpens));
     }
 
     void AddTotable(Query query,TextView textView) {
