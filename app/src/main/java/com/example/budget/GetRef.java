@@ -23,7 +23,7 @@ public class GetRef {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds1: snapshot.getChildren()){
                     ds1.getRef().removeValue();
-                    
+
 
                 }
             }

@@ -83,7 +83,6 @@ public class TodaySpendingActivity extends AppCompatActivity {
         recyclerView.setAdapter(todayItemsAdapter);
 
 
-
       bottomNavigationView.setSelectedItemId(R.id.expenses);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +135,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
                 }
                 todayItemsAdapter.notifyDataSetChanged();
 
+
                 prograssBar.setVisibility(View.GONE);
                 int totalAmmount =0;
                 for (DataSnapshot ds: snapshot.getChildren()){
@@ -148,6 +148,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
                 totalAmount.setText("Total spending for today= "+totalAmmount);
 
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -182,11 +183,9 @@ public class TodaySpendingActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(Amount)){
                     amount.setError(getString(R.string.AmoutReq));
                     return;
-                }
-                if(Item.equals("Select item")){
+                }else if(Item.equals("Select item")){
                     Toast.makeText(TodaySpendingActivity.this, R.string.SelecetvalidItem,Toast.LENGTH_LONG).show();
-                }
-                if(TextUtils.isEmpty(notes)||notes.toString()==null){
+                }  else if(TextUtils.isEmpty(notes)){
                     note.setError(getString(R.string.NoteReq));
                 }
                 else{

@@ -183,56 +183,65 @@ public class SpendingCalendarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String date_ = date.getText().toString();
-                if(date_.length()<2){
+                if(date_.isEmpty()){
+                    date.setError(getString(R.string.enter_Date));
+                }
+                if(date_.length()<2&&!date_.isEmpty()){
                     date_ = "0"+date_;
                 }
                 String month_ = month.getText().toString();
+                if(month_.isEmpty()){
+                    month.setError(getString(R.string.enter_Month));
+                }
                 if(month_.length()<2){
                     month_ = "0"+month_;
                 }
-                String year_ = year.getText().toString();
 
+                String year_ = year.getText().toString();
+                if(year_.isEmpty()){
+                    year.setError(getString(R.string.enter_Year));
+                }
 
                 String date = ""+date_+"-"+month_+"-"+year_;
+                if(!year_.isEmpty()&&!date_.isEmpty()&&!month_.isEmpty()){
+                    dialog.dismiss();
+                    Query query = GetRef.getQueryByDate(date);
+                    query.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            myData.clear();
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                                Data data = dataSnapshot.getValue(Data.class);
+                                myData.add(data);
+                            }
+                            todayItemsAdapter.notifyDataSetChanged();
+                            int totalAmmount =0;
+                            for (DataSnapshot ds: snapshot.getChildren()){
+                                Map<String,Object> map = (Map<String, Object>)ds.getValue();
+                                Object total=map.get("amount");
+                                int flag=Integer.parseInt(String.valueOf(total));
+                                totalAmmount+=flag;
 
-                Query query = GetRef.getQueryByDate(date);
-                query.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        myData.clear();
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                            Data data = dataSnapshot.getValue(Data.class);
-                            myData.add(data);
+                            }
+                            StringBuilder spendingMsg= new StringBuilder();
+                            spendingMsg.append(getString(R.string.amount_spent_on_datte));
+                            spendingMsg.append(date);
+
+                            spendingMsg.append(getString(R.string.is));
+                            spendingMsg.append(totalAmmount);
+                            TextView textView = findViewById(R.id.TotalAmount);
+                            textView.setText(spendingMsg.toString());
+
+
                         }
-                        todayItemsAdapter.notifyDataSetChanged();
-                        int totalAmmount =0;
-                        for (DataSnapshot ds: snapshot.getChildren()){
-                            Map<String,Object> map = (Map<String, Object>)ds.getValue();
-                            Object total=map.get("amount");
-                            int flag=Integer.parseInt(String.valueOf(total));
-                            totalAmmount+=flag;
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
                         }
-                        StringBuilder spendingMsg= new StringBuilder();
-                        spendingMsg.append("Total amount spent on ");
-                        spendingMsg.append(date);
+                    });
+                }
 
-                        spendingMsg.append(" is ");
-                        spendingMsg.append(totalAmmount);
-                        TextView textView = findViewById(R.id.TotalAmount);
-                        textView.setText(spendingMsg.toString());
-
-
-
-
-                            dialog.dismiss();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
 
 
             }

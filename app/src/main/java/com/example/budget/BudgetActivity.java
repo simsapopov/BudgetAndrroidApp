@@ -152,17 +152,17 @@ public class BudgetActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                totalAmount=totalAmount+ Integer.parseInt(amount.getText().toString());
                 String budgetAmount=amount.getText().toString();
                 String budgetItem=itemSpinner.getSelectedItem().toString();
-                if(TextUtils.isEmpty(budgetAmount)){
+
+                if (TextUtils.isEmpty(amount.getText().toString())) {
                     amount.setError("Amount is required");
                     return;
-                }
-                if(budgetItem.equals("Select item")){
+                }else  if(budgetItem.equals("Select item")){
                     Toast.makeText(BudgetActivity.this,"Selectt a valid item",Toast.LENGTH_LONG).show();
-                }
-                else{
+                    return;
+                } else{
+                    totalAmount=totalAmount+ Integer.parseInt(amount.getText().toString());
                    loader.setMessage("adding a budget item");
                     loader.setCanceledOnTouchOutside(false);
                   loader.show();
@@ -212,10 +212,10 @@ public class BudgetActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position,@NonNull Data model){
                 totalAmountChange(budgetRef,totalBudgetAmountTextView);
-                holder.setItemAmount("Allocated amount: $"+ model.getAmount());
-                holder.setDate("On: "+ model.getDate());
+                holder.setItemAmount(getString(R.string.amount_allocateed_BudgetActivity)+ model.getAmount());
+                holder.setDate(getString(R.string.on_Date)+ model.getDate());
 
-                holder.setItemName("BudgetItem: "+model.getItem());
+                holder.setItemName(getString(R.string.Budget_Item)+model.getItem());
                 holder.notes.setVisibility(View.GONE);
                 switch (model.getItem()){
                     case "Transport":
@@ -339,7 +339,7 @@ public class BudgetActivity extends AppCompatActivity {
                 Data data = new Data(item,post_key,date,null,amount,months.getMonths());
                 budgetRef.child(post_key).setValue(data).addOnCompleteListener(task -> {
                     if(task.isSuccessful()){
-                        Toast.makeText(BudgetActivity.this,"Updated successfuly",Toast.LENGTH_LONG).show();
+                        Toast.makeText(BudgetActivity.this, R.string.successfully_update,Toast.LENGTH_LONG).show();
 
                     }else {
                         Toast.makeText(BudgetActivity.this,task.getException().toString(),Toast.LENGTH_LONG);
@@ -353,7 +353,7 @@ public class BudgetActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         budgetRef.child(post_key).removeValue().addOnCompleteListener(task -> {
                             if(task.isSuccessful()){
-                                Toast.makeText(BudgetActivity.this,"Deleted successfuly",Toast.LENGTH_LONG).show();
+                                Toast.makeText(BudgetActivity.this, R.string.sucessfully_del,Toast.LENGTH_LONG).show();
 
                             }else {
                                 Toast.makeText(BudgetActivity.this,task.getException().toString(),Toast.LENGTH_LONG);

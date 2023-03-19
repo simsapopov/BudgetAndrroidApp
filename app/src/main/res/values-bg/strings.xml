@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Пари</string>
+    <string name="Update_Question">Пари</string>
+    <string name="enter_amount">Въведете сума...</string>
+    <string name="enter_note">Въведете бележка...</string>
+    <string name="Expenseadded">Разходът бе добавен</string>
+    <string name="Err">Грешка</string>
+    <string name="AmoutReq">Сумата е задължителна</string>
+    <string name="NoteReq">Бележката е задължителна</string>
+    <string name="SelecetvalidItem">Select a valid item</string>
+    <string name="databaseURL">https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/</string>
+    <string name="successfully_update">Актуализацията беше успешна</string>
+    <string name="sucessfully_del">Изтриването бе успешнп</string>
+    <string name="amount_allocateed_BudgetActivity">Сума: лв</string>
+    <string name="Budget_Item">Категория: </string>
+    <string name="on_Date">Дата: </string>
+    <string name="add_budget">Add Budget</string>
+    <string name="save">Запази</string>
+    <string name="cancel">Назад</string>
+    <string name="enter_Date">Enter date</string>
+    <string name="enter_Month">Enter month</string>
+    <string name="amount_spent_on_datte">"Total amount spent on "</string>
+    <string name="is">\" is \"</string>
+    <string-array name="items">
+        <item>Категория</item>
+        <item>Транспорт</item>
+        <item>Храна</item>
+        <item>За дома</item>
+        <item>Забавление</item>
+        <item>Образование</item>
+        <item>Благотворителност</item>
+        <item>Лични разходи</item>
+        <item>Пътувания</item>
+        <item>Здравни разходи</item>
+        <item>Други</item>
+    </string-array>
+</resources>
