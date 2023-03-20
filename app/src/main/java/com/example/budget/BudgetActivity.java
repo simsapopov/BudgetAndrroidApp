@@ -121,7 +121,7 @@ public class BudgetActivity extends AppCompatActivity {
 
                 }
                 String Sum = String.valueOf(totalAmmount);
-                textView.setText("Total budget: "+totalAmmount);
+                textView.setText(getString(R.string.total_budget)+" = "+totalAmmount);
 
 
 
@@ -152,9 +152,32 @@ public class BudgetActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String budgetItem;
                 String budgetAmount=amount.getText().toString();
-                String budgetItem=itemSpinner.getSelectedItem().toString();
 
+                 budgetItem=itemSpinner.getSelectedItem().toString();
+                if(itemSpinner.getSelectedItem().toString().equals("Транспорт")){
+                 budgetItem="Transport";
+                }
+                if(itemSpinner.getSelectedItem().toString().equals("Храна")){
+                 budgetItem="Food";
+                }if(itemSpinner.getSelectedItem().toString().equals("За дома")){
+                 budgetItem="House";
+                }if(itemSpinner.getSelectedItem().toString().equals("Забавление")){
+                 budgetItem="Entertainment";
+                }if(itemSpinner.getSelectedItem().toString().equals("Образование")){
+                 budgetItem="Education";
+                }if(itemSpinner.getSelectedItem().toString().equals("Благотворителност")){
+                 budgetItem="Charity";
+                }if(itemSpinner.getSelectedItem().toString().equals("Лични разходи")){
+                 budgetItem="Personal";
+                }if(itemSpinner.getSelectedItem().toString().equals("Пътувания")){
+                 budgetItem="Travel";
+                }if(itemSpinner.getSelectedItem().toString().equals("Здравни разходи")){
+                 budgetItem="Health";
+                }if(itemSpinner.getSelectedItem().toString().equals("Други")){
+                 budgetItem="Other";
+                }
                 if (TextUtils.isEmpty(amount.getText().toString())) {
                     amount.setError("Amount is required");
                     return;
@@ -215,38 +238,48 @@ public class BudgetActivity extends AppCompatActivity {
                 holder.setItemAmount(getString(R.string.amount_allocateed_BudgetActivity)+ model.getAmount());
                 holder.setDate(getString(R.string.on_Date)+ model.getDate());
 
-                holder.setItemName(getString(R.string.Budget_Item)+model.getItem());
+
                 holder.notes.setVisibility(View.GONE);
                 switch (model.getItem()){
                     case "Transport":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_directions_bus_24);
+                        holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Transport));;
                         break;
                     case "Food":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_fastfood_24);
+                        holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Food));;
                         break;
                         case "House":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_home_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.House));;
                         break;
                         case "Entertainment":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_theater_comedy_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Entertainment));;
                         break;
                         case "Education":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_school_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Education));;
                         break;
                         case "Charity":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_emoji_people_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Charity));;
                         break;
                         case "Personal":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_person_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Personal));;
                         break;
                         case "Travel":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_airplanemode_active_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Travel));;
                         break;
                         case "Health":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_heart_broken_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Health));;
                         break;
                         case "Other":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_menu_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Other));;
                         break;
 
 

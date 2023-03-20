@@ -199,6 +199,7 @@ public class SpendingCalendarActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String date_ = date.getText().toString();
                 if(date_.isEmpty()){
                     date.setError(getString(R.string.enter_Date));
@@ -280,4 +281,3 @@ public class SpendingCalendarActivity extends AppCompatActivity {
     }
 }
 
-//TODO make text in String.xml to enable Bulgarian

@@ -12,7 +12,7 @@
     <string name="successfully_update">Updated successfully</string>
     <string name="sucessfully_del">Deleted successfully</string>
     <string name="amount_allocateed_BudgetActivity">Allocated amount: $</string>
-    <string name="Budget_Item">BudgetItem: </string>
+    <string name="Budget_Item">Budget Item: </string>
     <string name="on_Date">On: </string>
     <string name="add_budget">Add Budget</string>
     <string name="save">Save</string>
@@ -25,7 +25,7 @@
     <string name="item_">Item: </string>
     <string name="Amount_Todays_Item_adapter">Amount: </string>
     <string name="on_Todays_Item_adapter">On: </string>
-    <string name="note_Today_Items_adapter">On: "</string>
+    <string name="note_Today_Items_adapter">Note: "</string>
     <string name="Transport">Transport </string>
     <string name="Food">Food </string>
     <string name="House">House </string>
@@ -38,9 +38,29 @@
     <string name="Other">Other </string>
     <string name="Amount_spent_on_Day">"Total amount spent on "</string>
     <string name="enter_Note_Delete">Enter note to delete expense</string>
+    <string name="enter_mail_remainder">Please enter Email or username</string>
+    <string name="enter_password_reminder">Please enter Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up_button_text">Dont have an account? Sign Up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_to_login_question">Alrready have an account? Log in</string>
+    <string name="note_for_delete_guide">If you want to delete expense record fill the date and note</string>
+    <string name="note_for_delete_enter">Enter the note from the expense record</string>
+    <string name="delete">Delete</string>
+    <string name="submit">Submit</string>
+    <string name="Datee_for_Search">Enter a only date if you want to check expenses</string>
+    <string name="table">Table</string>
+    <string name="expense_menu">Expense</string>
+    <string name="budget_menu">Budget</string>
+    <string name="expence_menu">Expense-Day</string>
+    <string name="spending_for_today">\"Total spending for today= \"</string>
+    <string name="total_budget">\"Total budget: \"</string>
+    <string name="enter_date_reminder">Enter date from calendar button</string>
+    <string name="table_toolbar_text">Table with Budget and Expense</string>
+    <string name="spending_calendar_toolbar">Spending for any day</string>
+    <string name="today_spending_toolbar">Spending for today</string>
 
     <string-array name="items">
-        <item>Select item</item>
         <item>Transport</item>
         <item>Food</item>
         <item>House</item>

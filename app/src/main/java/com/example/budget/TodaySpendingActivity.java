@@ -145,7 +145,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
                     totalAmmount+=flag;
 
                 }
-                totalAmount.setText("Total spending for today= "+totalAmmount);
+                totalAmount.setText(getString(R.string.spending_for_today)+" = "+totalAmmount);
 
             }
 
@@ -176,12 +176,14 @@ public class TodaySpendingActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO The problem with mixing languages is here
+
                 String Amount=amount.getText().toString();
                 String Item="";
+                if(itemSpinner.getSelectedItem().toString().equals("Категория")){
+
+                }
                 switch (itemSpinner.getSelectedItem().toString()){
                     case "Транспорт":
-
                         Item="Transport";
 
                         break;

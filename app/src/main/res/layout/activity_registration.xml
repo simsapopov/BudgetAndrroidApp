@@ -19,7 +19,7 @@
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Please enter Email"
+        android:hint="@string/enter_mail_remainder"
         android:textColor="@color/black"
         android:textSize="20sp"
         />
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="Please enter Passworrd"
+        android:hint="@string/enter_password_reminder"
         android:textColor="@color/black"
         android:textSize="20sp"
         />
@@ -36,12 +36,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/RegisterBtn"
-        android:text="Sign Up"/>
+        android:text="@string/sign_up"/>
     <TextView
         android:id="@+id/LogQ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alrready have an account? Log in"
+        android:text="@string/sign_up_to_login_question"
         />
 
 

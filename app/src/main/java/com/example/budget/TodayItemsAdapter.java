@@ -37,7 +37,6 @@ public class TodayItemsAdapter extends RecyclerView.Adapter<TodayItemsAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             final Data data = myDataList.get(position);
-            //TODO Problem with mixing languages
             holder.amount.setText(mContext.getString(R.string.Amount_Todays_Item_adapter)+data.getAmount());
             holder.date.setText(mContext.getString(R.string.on_Todays_Item_adapter)+data.getDate());
             holder.notes.setText(mContext.getString(R.string.note_Today_Items_adapter)+data.getNotes());
