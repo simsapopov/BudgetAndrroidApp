@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:titleTextColor="@android:color/white"
+            app:titleTextColor="?android:attr/textColorPrimary"
             app:title="@string/spending_calendar_toolbar"
             app:popupTheme="@style/Theme.Budget" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="?android:attr/textColorPrimary"
             android:id="@+id/TotalAmount"
             android:text="@string/enter_date_reminder"
             android:textStyle="bold"
@@ -33,7 +33,7 @@
             android:textSize="20sp"/> <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="?android:attr/textColorPrimary"
             android:id="@+id/Amount"
             android:text=""
             android:textStyle="bold"

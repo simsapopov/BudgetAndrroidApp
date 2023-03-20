@@ -45,25 +45,27 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String emailString= email.getText().toString();
+                String errorPassword= getString(R.string.enter_password_reminder);
+                String errorEmail= getString(R.string.enter_mail_remainder);
                 String passwordString= password.getText().toString();
                 if(TextUtils.isEmpty(emailString)){
-                    email.setError("Enter email");
+                    email.setError(errorEmail);
                 }
-                if(TextUtils.isEmpty(emailString)){
-                    password.setError("Enter password");
-                }   else { rogressDial.setMessage("Login in procces");
+                if(TextUtils.isEmpty(passwordString)){
+                    password.setError(errorPassword);
+                }   else { rogressDial.setMessage(" in procces");
                     rogressDial.setCanceledOnTouchOutside(false);
                     rogressDial.show();
                     Auth.createUserWithEmailAndPassword(emailString,passwordString).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+                                Intent intent = new Intent(RegistrationActivity.this, UserGuideActivity.class);
                                 startActivity(intent);
                                 finish();
                                 rogressDial.dismiss();
                             }else {
-                                Toast.makeText(RegistrationActivity.this,"Wrong auth",Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegistrationActivity.this, R.string.error_auth,Toast.LENGTH_LONG).show();
                                 rogressDial.dismiss();
 
                             }

@@ -49,14 +49,18 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String emailString= email.getText().toString();
+                String errorPassword= getString(R.string.enter_password_reminder);
+                String errorEmail= getString(R.string.enter_mail_remainder);
                 String passwordString= password.getText().toString();
                 if(TextUtils.isEmpty(emailString)){
-                    email.setError("Enter email");
-                }else if(TextUtils.isEmpty(emailString)){
-                    password.setError("Enter password");
+
+                    email.setError(errorEmail);
+                }else if(TextUtils.isEmpty(passwordString)){
+
+                    password.setError(errorPassword);
                 }else if(emailString==null||passwordString == null){
-                    email.setError("Enter email");
-                    password.setError("Enter password");
+                    email.setError(errorEmail);
+                    password.setError(errorPassword);
                 }else { rogressDial.setMessage("Login in procces");
                     rogressDial.setCanceledOnTouchOutside(false);
                     rogressDial.show();

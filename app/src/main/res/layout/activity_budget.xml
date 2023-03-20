@@ -8,15 +8,16 @@
     tools:context=".TodaySpendingActivity">
 
     <LinearLayout
+        android:outlineSpotShadowColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="?android:attr/textColorPrimary"
             android:id="@+id/TotalBudget"
-            android:text="Total amount: 0"
+            android:text="@string/total_budget"
 
             android:textStyle="bold"
             android:gravity="center"

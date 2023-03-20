@@ -17,7 +17,6 @@ public class GetRef {
         DatabaseReference ref = FirebaseDatabase.getInstance("https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/").getReference("expense").child(onlineUserId);
         Query a =ref.orderByChild("date").equalTo(date).getRef().orderByChild("notes").equalTo(note);
 
-
         a.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -38,9 +37,36 @@ public class GetRef {
 
     }
 
+    public static boolean checkRecord() {
+
+        DatabaseReference  nodeRef = FirebaseDatabase.getInstance("https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/").getReference("expense").child(onlineUserId);
+        final boolean[] flag = new boolean[1];
+        Query query = nodeRef;
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.exists()) {
+
+                    flag[0] = true;
+                } else {
+
+                    flag[0] = false;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return flag[0];
+    }
+
     public static Query getExpenseQuery(String item){
 
         DatabaseReference ref = FirebaseDatabase.getInstance("https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/").getReference("expense").child(onlineUserId);
+
         return  ref.orderByChild("item").equalTo(item);
 
     }
