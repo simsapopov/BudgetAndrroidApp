@@ -5,7 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TableActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:title="@string/table_toolbar_text"
+        app:popupTheme="@style/Theme.Budget" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_margin="10dp"
@@ -24,19 +36,19 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Item" />
+                android:text="@string/Budget_Item" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:text="Budget" />
+                android:text="@string/budget_menu" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:text="Expense" />
+                android:text="@string/expense_menu" />
         </TableRow>
         <TableRow
             android:layout_marginTop="10dp"
@@ -49,7 +61,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Transportation" />
+                android:text="@string/Transport" />
 
             <TextView
                 android:id="@+id/transportationBudget"
@@ -77,7 +89,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Food" />
+                android:text="@string/Food" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -106,7 +118,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="House" />
+                android:text="@string/House" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -135,7 +147,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Enternainment" />
+                android:text="@string/Entertainment" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,7 +176,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Personal " />
+                android:text="@string/Personal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -194,7 +206,7 @@
 
 
 
-                android:text="Travel" />
+                android:text="@string/Travel" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -223,7 +235,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Health" />
+                android:text="@string/Health" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -252,7 +264,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Charity " />
+                android:text="@string/Charity" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -281,7 +293,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Education" />
+                android:text="@string/Education" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -310,7 +322,7 @@
                 android:layout_marginLeft="30dp"
 
 
-                android:text="Other" />
+                android:text="@string/Other" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -331,6 +343,7 @@
 
 
     </TableLayout>
+    </LinearLayout>
     <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -362,7 +375,7 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fab"
+            android:id="@+id/fab_table"
             android:src="@drawable/ic_baseline_home_24"
             app:layout_anchor="@id/bottomAppBar"
 

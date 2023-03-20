@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Пари</string>
+    <string name="Update_Question">Пари</string>
+    <string name="enter_amount">Въведете сума...</string>
+    <string name="enter_note">Въведете бележка...</string>
+    <string name="Expenseadded">Разходът бе добавен</string>
+    <string name="Err">Грешка</string>
+    <string name="AmoutReq">Сумата е задължителна</string>
+    <string name="NoteReq">Бележката е задължителна</string>
+    <string name="SelecetvalidItem">Select a valid item</string>
+    <string name="databaseURL">https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/</string>
+    <string name="successfully_update">Актуализацията беше успешна</string>
+    <string name="sucessfully_del">Изтриването бе успешнп</string>
+    <string name="amount_allocateed_BudgetActivity">Сума: лв</string>
+    <string name="Budget_Item">Категория: </string>
+    <string name="on_Date">Дата: </string>
+    <string name="add_budget">Добавяне на бюджет</string>
+    <string name="save">Запази</string>
+    <string name="cancel">Назад</string>
+    <string name="enter_Year">Въведете година</string>
+    <string name="enter_Date">Въведете дата</string>
+    <string name="enter_Month">Въведете месец</string>
+    <string name="amount_spent_on_datte">Изразходената сума на </string>
+    <string name="is" >е </string>
+    <string name="item_">Категория:</string>
+    <string name="Amount_Todays_Item_adapter">Сума: </string>
+    <string name="on_Todays_Item_adapter">На: </string>
+    <string name="note_Today_Items_adapter">Бележка - "</string>
+    <string name="Transport">Транспорт</string>
+    <string name="Food">Храна</string>
+    <string name="House">За дома</string>
+    <string name="Entertainment">Забавление</string>
+    <string name="Education">Образование</string>
+    <string name="Charity">Благотворителност</string>
+    <string name="Personal">Лични разходи</string>
+    <string name="Travel">Пътувания</string>
+    <string name="Health">Здравни разходи</string>
+    <string name="Other">Други</string>
+    <string name="Amount_spent_on_Day">Сума изхарчена за </string>
+    <string name="enter_Note_Delete">Enter note to delete expense</string>
+    <string name="enter_mail_remainder">Моля въведете имейл или username</string>
+    <string name="enter_password_reminder">Въведете Парола</string>
+    <string name="login">Вписване</string>
+    <string name="sign_up_button_text">Нямате акаунт? Регистрирай се тук</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="sign_up_to_login_question">Вече имаш акаунт? Впиши се тук</string>
+    <string name="note_for_delete_guide">Ако искате да изтриете даден разход въведетте дата и бележка</string>
+    <string name="note_for_delete_enter">Въведете бележката на желания за изтриване разход</string>
+    <string name="delete">Изтриване</string>
+    <string name="submit">Търси</string>
+    <string name="Datee_for_Search">Въведете само дата ако искате да видите разходите за деня</string>
+    <string name="table">Таблица</string>
+    <string name="expense_menu">Разход</string>
+    <string name="budget_menu">Бюджет</string>
+    <string name="expence_menu">Разход-ден</string>
+    <string name="spending_for_today">Общо изхарчено днес </string>
+    <string name="total_budget">Общ бюджет </string>
+    <string name="enter_date_reminder">Въведете дата за търсене на разходи чрез зеления бутон-календар</string>
+    <string name="table_toolbar_text">Таблица Бюджет-Разход</string>
+    <string name="spending_calendar_toolbar">Разходи за даден ден</string>
+    <string name="today_spending_toolbar">Разходи</string>
+    <string-array name="items">
+
+        <item>Транспорт</item>
+        <item>Храна</item>
+        <item>За дома</item>
+        <item>Забавление</item>
+        <item>Образование</item>
+        <item>Благотворителност</item>
+        <item>Лични разходи</item>
+        <item>Пътувания</item>
+        <item>Здравни разходи</item>
+        <item>Други</item>
+    </string-array>
+</resources>

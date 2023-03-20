@@ -83,7 +83,6 @@ public class TodaySpendingActivity extends AppCompatActivity {
         recyclerView.setAdapter(todayItemsAdapter);
 
 
-
       bottomNavigationView.setSelectedItemId(R.id.expenses);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +135,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
                 }
                 todayItemsAdapter.notifyDataSetChanged();
 
+
                 prograssBar.setVisibility(View.GONE);
                 int totalAmmount =0;
                 for (DataSnapshot ds: snapshot.getChildren()){
@@ -145,9 +145,10 @@ public class TodaySpendingActivity extends AppCompatActivity {
                     totalAmmount+=flag;
 
                 }
-                totalAmount.setText("Total spending for today= "+totalAmmount);
+                totalAmount.setText(getString(R.string.spending_for_today)+" = "+totalAmmount);
 
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -175,18 +176,56 @@ public class TodaySpendingActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String Amount=amount.getText().toString();
-                String Item=itemSpinner.getSelectedItem().toString();
+                String Item="";
+                if(itemSpinner.getSelectedItem().toString().equals("Категория")){
+
+                }
+                switch (itemSpinner.getSelectedItem().toString()){
+                    case "Транспорт":
+                        Item="Transport";
+
+                        break;
+                    case "Храна":
+                         Item="Food";
+                        break;
+                    case "За дома":
+                         Item="House";
+                        break;
+                    case "Забавление":
+                         Item="Entertainment";
+                        break;
+                 case "Образование":
+                     Item="Education";
+                          break;
+                    case "Благотворителност":
+                        Item="Charity";
+                    break;
+                  case "Лични разходи":
+                 Item = "Personal";
+                        break;
+                 case "Пътувания":
+                   Item="Travel";
+                    break;
+                    case "Здравни разходи":
+                    Item = "Health";
+                        break;
+                   case "Други":
+                    Item="Other";
+                        break;
+                    default:
+                        Item=itemSpinner.getSelectedItem().toString();
+
+                }
                 String notes = note.getText().toString();
 
                 if(TextUtils.isEmpty(Amount)){
                     amount.setError(getString(R.string.AmoutReq));
                     return;
-                }
-                if(Item.equals("Select item")){
+                }else if(Item.equals("Select item")){
                     Toast.makeText(TodaySpendingActivity.this, R.string.SelecetvalidItem,Toast.LENGTH_LONG).show();
-                }
-                if(TextUtils.isEmpty(notes)||notes.toString()==null){
+                }  else if(TextUtils.isEmpty(notes)){
                     note.setError(getString(R.string.NoteReq));
                 }
                 else{

@@ -121,7 +121,7 @@ public class BudgetActivity extends AppCompatActivity {
 
                 }
                 String Sum = String.valueOf(totalAmmount);
-                textView.setText("Total budget: "+totalAmmount);
+                textView.setText(getString(R.string.total_budget)+" = "+totalAmmount);
 
 
 
@@ -152,17 +152,40 @@ public class BudgetActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                totalAmount=totalAmount+ Integer.parseInt(amount.getText().toString());
+                String budgetItem;
                 String budgetAmount=amount.getText().toString();
-                String budgetItem=itemSpinner.getSelectedItem().toString();
-                if(TextUtils.isEmpty(budgetAmount)){
+
+                 budgetItem=itemSpinner.getSelectedItem().toString();
+                if(itemSpinner.getSelectedItem().toString().equals("Транспорт")){
+                 budgetItem="Transport";
+                }
+                if(itemSpinner.getSelectedItem().toString().equals("Храна")){
+                 budgetItem="Food";
+                }if(itemSpinner.getSelectedItem().toString().equals("За дома")){
+                 budgetItem="House";
+                }if(itemSpinner.getSelectedItem().toString().equals("Забавление")){
+                 budgetItem="Entertainment";
+                }if(itemSpinner.getSelectedItem().toString().equals("Образование")){
+                 budgetItem="Education";
+                }if(itemSpinner.getSelectedItem().toString().equals("Благотворителност")){
+                 budgetItem="Charity";
+                }if(itemSpinner.getSelectedItem().toString().equals("Лични разходи")){
+                 budgetItem="Personal";
+                }if(itemSpinner.getSelectedItem().toString().equals("Пътувания")){
+                 budgetItem="Travel";
+                }if(itemSpinner.getSelectedItem().toString().equals("Здравни разходи")){
+                 budgetItem="Health";
+                }if(itemSpinner.getSelectedItem().toString().equals("Други")){
+                 budgetItem="Other";
+                }
+                if (TextUtils.isEmpty(amount.getText().toString())) {
                     amount.setError("Amount is required");
                     return;
-                }
-                if(budgetItem.equals("Select item")){
+                }else  if(budgetItem.equals("Select item")){
                     Toast.makeText(BudgetActivity.this,"Selectt a valid item",Toast.LENGTH_LONG).show();
-                }
-                else{
+                    return;
+                } else{
+                    totalAmount=totalAmount+ Integer.parseInt(amount.getText().toString());
                    loader.setMessage("adding a budget item");
                     loader.setCanceledOnTouchOutside(false);
                   loader.show();
@@ -211,43 +234,52 @@ public class BudgetActivity extends AppCompatActivity {
 
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position,@NonNull Data model){
-
-
                 totalAmountChange(budgetRef,totalBudgetAmountTextView);
-                holder.setItemAmount("Allocated amount: $"+ model.getAmount());
-                holder.setDate("On: "+ model.getDate());
-                holder.setItemName("BudgetItem: "+model.getItem());
+                holder.setItemAmount(getString(R.string.amount_allocateed_BudgetActivity)+ model.getAmount());
+                holder.setDate(getString(R.string.on_Date)+ model.getDate());
+
+
                 holder.notes.setVisibility(View.GONE);
                 switch (model.getItem()){
                     case "Transport":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_directions_bus_24);
+                        holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Transport));;
                         break;
                     case "Food":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_fastfood_24);
+                        holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Food));;
                         break;
                         case "House":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_home_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.House));;
                         break;
                         case "Entertainment":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_theater_comedy_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Entertainment));;
                         break;
                         case "Education":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_school_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Education));;
                         break;
                         case "Charity":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_emoji_people_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Charity));;
                         break;
                         case "Personal":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_person_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Personal));;
                         break;
                         case "Travel":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_airplanemode_active_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Travel));;
                         break;
                         case "Health":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_heart_broken_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Health));;
                         break;
                         case "Other":
                         holder.imageView.setImageResource(R.drawable.ic_baseline_menu_24);
+                            holder.setItemName(getString(R.string.Budget_Item)+ getString(R.string.Other));;
                         break;
 
 
@@ -267,6 +299,7 @@ public class BudgetActivity extends AppCompatActivity {
             @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.retrieve_layout,parent,false);
                 return new MyViewHolder(view);
 
@@ -339,7 +372,7 @@ public class BudgetActivity extends AppCompatActivity {
                 Data data = new Data(item,post_key,date,null,amount,months.getMonths());
                 budgetRef.child(post_key).setValue(data).addOnCompleteListener(task -> {
                     if(task.isSuccessful()){
-                        Toast.makeText(BudgetActivity.this,"Updated successfuly",Toast.LENGTH_LONG).show();
+                        Toast.makeText(BudgetActivity.this, R.string.successfully_update,Toast.LENGTH_LONG).show();
 
                     }else {
                         Toast.makeText(BudgetActivity.this,task.getException().toString(),Toast.LENGTH_LONG);
@@ -353,7 +386,7 @@ public class BudgetActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         budgetRef.child(post_key).removeValue().addOnCompleteListener(task -> {
                             if(task.isSuccessful()){
-                                Toast.makeText(BudgetActivity.this,"Deleted successfuly",Toast.LENGTH_LONG).show();
+                                Toast.makeText(BudgetActivity.this, R.string.sucessfully_del,Toast.LENGTH_LONG).show();
 
                             }else {
                                 Toast.makeText(BudgetActivity.this,task.getException().toString(),Toast.LENGTH_LONG);

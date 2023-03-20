@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter a only date if you want to check expenses "
+        android:text="@string/Datee_for_Search"
         android:textSize="20sp"
         android:layout_margin="16dp"/>
 
@@ -51,14 +51,14 @@
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/submit"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="If you want to delete expense record fill the date and note"
+        android:text="@string/note_for_delete_guide"
         android:textSize="20sp"
         android:layout_margin="16dp"/>
 
@@ -73,7 +73,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Enter the note from the expense record"
+            android:hint="@string/note_for_delete_enter"
 
 
             android:layout_marginStart="8dp"
@@ -86,7 +86,7 @@
         android:id="@+id/delete_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
+        android:text="@string/delete"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
         />

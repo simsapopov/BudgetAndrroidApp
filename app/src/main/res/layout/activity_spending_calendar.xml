@@ -19,7 +19,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:titleTextColor="@android:color/white"
-            app:title="Spending for any day"
+            app:title="@string/spending_calendar_toolbar"
             app:popupTheme="@style/Theme.Budget" />
 
         <TextView
@@ -27,7 +27,15 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:id="@+id/TotalAmount"
-            android:text="Enter date from calendar button"
+            android:text="@string/enter_date_reminder"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/> <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:id="@+id/Amount"
+            android:text=""
             android:textStyle="bold"
             android:gravity="center"
             android:textSize="20sp"/>
