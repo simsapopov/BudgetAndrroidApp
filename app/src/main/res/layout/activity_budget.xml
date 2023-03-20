@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:id="@+id/TotalBudget"
-            android:text="Total amount: 0"
+            android:text="@string/total_budget"
 
             android:textStyle="bold"
             android:gravity="center"

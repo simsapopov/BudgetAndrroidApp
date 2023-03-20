@@ -54,7 +54,7 @@
     <string name="budget_menu">Budget</string>
     <string name="expence_menu">Expense-Day</string>
     <string name="spending_for_today">\"Total spending for today= \"</string>
-    <string name="total_budget">\"Total budget: \"</string>
+    <string name="total_budget">Total budget: </string>
     <string name="enter_date_reminder">Enter date from calendar button</string>
     <string name="table_toolbar_text">Table with Budget and Expense</string>
     <string name="spending_calendar_toolbar">Spending for any day</string>
@@ -64,8 +64,15 @@
     <string name="user_guie_3">Second tab is for for adding your spendings.To add expense you must click on the green Button. When you open the tab you will see all your spending\'s for today.</string>
     <string name="user_guide_4">In the third tab you can review your spending\'s from the past.Simply click the Green floating button with calendar image. There you have two options. 1 Only to see spending\'s for chosen day. To do this you only need to fill the date. 2 You can remove expense records by filling the date tabs and the note in the expense record.</string>
     <string name="user_guide_5">In the last tab there is table for all category\'s and their budget and expense</string>
+    <string name="Home">Home</string>
+    <string name="hello_again">Hello again</string>
+    <string name="continue_inserting_main">We cant wait to continue helping you with your Budget</string>
+    <string name="your_first_item_insert_is_waiting_you">Your first item insert is waiting you</string>
+    <string name="budget_added_suc">Budget item added successfully</string>
+    <string name="select_valid_item">Select a valid item</string>
 
     <string-array name="items">
+        <item>Select item</item>
         <item>Transport</item>
         <item>Food</item>
         <item>House</item>

@@ -37,7 +37,7 @@
     <string name="Health">Здравни разходи</string>
     <string name="Other">Други</string>
     <string name="Amount_spent_on_Day">Сума изхарчена за </string>
-    <string name="enter_Note_Delete">Enter note to delete expense</string>
+    <string name="enter_Note_Delete">Добави бележка за изтриване на разход</string>
     <string name="enter_mail_remainder">Моля въведете имейл или username</string>
     <string name="enter_password_reminder">Въведете Парола</string>
     <string name="login">Вписване</string>
@@ -64,8 +64,15 @@
     <string name="user_guie_3">Втория таб е за добавяне на разходи. При натисканее на плюс бутона вие избирате категория-сума-бележка за вашия разход. При отваряне на самата страница ще ви излязат разходите, които са добавени в този ден.</string>
     <string name="user_guide_4">В третия таб чрез наатискане на зеления календар бутон вие имате две опции. Първата е да напишете дата и чрез натискане на търси да видите всички разходи за съответния ден. И втората ако искате да изтриете определен разход освен неговата дата да добавите и бележката записана на него и да натиснете изтриване .</string>
     <string name="user_guide_5">Четвъртият таб е генерална таблица с Бюджет към разход за всички ваши добавяни записки.</string>
+    <string name="Home">Home</string>
+    <string name="hello_again">Добре дошъл отново </string>
+    <string name="continue_inserting_main">Щастливи сме че вече помагаме да следиш своя бюджет</string>
+    <string name="your_first_item_insert_is_waiting_you">Нямаме търпение да въведеш първия си запис на бюджет/разход</string>
+    <string name="budget_added_suc">Успешно добавен бюджет</string>
+    <string name="select_valid_item">Избере категория</string>
     <string-array name="items">
 
+        <item>Категория</item>
         <item>Транспорт</item>
         <item>Храна</item>
         <item>За дома</item>

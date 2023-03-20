@@ -181,8 +181,8 @@ public class BudgetActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(amount.getText().toString())) {
                     amount.setError("Amount is required");
                     return;
-                }else  if(budgetItem.equals("Select item")){
-                    Toast.makeText(BudgetActivity.this,"Selectt a valid item",Toast.LENGTH_LONG).show();
+                }else  if(budgetItem.equals("Select item")||budgetItem.equals("Категория")){
+                    Toast.makeText(BudgetActivity.this, R.string.select_valid_item ,Toast.LENGTH_LONG).show();
                     return;
                 } else{
                     totalAmount=totalAmount+ Integer.parseInt(amount.getText().toString());
@@ -201,7 +201,7 @@ public class BudgetActivity extends AppCompatActivity {
                     Data data = new Data(budgetItem,id,date,null,Integer.parseInt(budgetAmount),months.getMonths());
                     budgetRef.child(id).setValue(data).addOnCompleteListener(task -> {
                         if(task.isSuccessful()){
-                            Toast.makeText(BudgetActivity.this,"BudgetActivity item added successfuly",Toast.LENGTH_LONG).show();
+                            Toast.makeText(BudgetActivity.this, R.string.budget_added_suc,Toast.LENGTH_LONG).show();
 
                         }else {
                             Toast.makeText(BudgetActivity.this,"Error",Toast.LENGTH_LONG);
