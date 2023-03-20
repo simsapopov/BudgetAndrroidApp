@@ -59,6 +59,11 @@
     <string name="table_toolbar_text">Table with Budget and Expense</string>
     <string name="spending_calendar_toolbar">Spending for any day</string>
     <string name="today_spending_toolbar">Spending for today</string>
+    <string name="user_guidlines_1">You have four tabs.Your general spending and budget items are organized in 12 groups.</string>
+    <string name="user_guide_2">The first tab is to add/remove/change your budget.You can add new budget items with the green Plus button.To change or remove certain Budget item you must tap on the item.</string>
+    <string name="user_guie_3">Second tab is for for adding your spendings.To add expense you must click on the green Button. When you open the tab you will see all your spending\'s for today.</string>
+    <string name="user_guide_4">In the third tab you can review your spending\'s from the past.Simply click the Green floating button with calendar image. There you have two options. 1 Only to see spending\'s for chosen day. To do this you only need to fill the date. 2 You can remove expense records by filling the date tabs and the note in the expense record.</string>
+    <string name="user_guide_5">In the last tab there is table for all category\'s and their budget and expense</string>
 
     <string-array name="items">
         <item>Transport</item>
