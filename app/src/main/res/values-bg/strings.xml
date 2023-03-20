@@ -70,6 +70,8 @@
     <string name="your_first_item_insert_is_waiting_you">Нямаме търпение да въведеш първия си запис на бюджет/разход</string>
     <string name="budget_added_suc">Успешно добавен бюджет</string>
     <string name="select_valid_item">Избере категория</string>
+    <string name="total_amount_0">Обща сума: 0</string>
+    <string name="error_auth">Сгрешени данни</string>
     <string-array name="items">
 
         <item>Категория</item>

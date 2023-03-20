@@ -57,7 +57,7 @@ public class GetRef {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Handle error
+
             }
         });
         return flag[0];
