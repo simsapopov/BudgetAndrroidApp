@@ -52,7 +52,7 @@ The second tab is for adding your expenses. To add an expense, tap on the green 
 
 The third tab is for reviewing your expenses from the past. To view expenses for a specific day, click on the green floating button with a calendar image. You can either view expenses for a chosen day by filling the date or remove expense records by filling the date and note in the expense record.
 
-[![Expense-cal-ready.png](https://i.postimg.cc/BvMGPZBz/Expense-cal-ready.png)](https://postimg.cc/4K70rgMv)
+[![Expense-cal-ready.png](https://i.postimg.cc/L5ZXVgy5/Expense-cal-ready.png)](https://postimg.cc/Lg2295FF)
 
 ### Categories Tab
 
