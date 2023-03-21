@@ -1,5 +1,5 @@
 
-# Budget Watcher Android App
+# BudgetApp Android App
 
 The Budget app is a Java-based Android application that allows users to track their expenses and manage their budgets. It utilizes Firebase authentication for login and registration and stores data in Firebase database. The app is available in both English and Bulgarian languages and supports both light and dark themes based on the user's device settings.
 
