@@ -35,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
         boolean[] result = new boolean[1];
         ;
         if(GetRef.checkRecord()){
-            textForItemsInsert.setText(R.string.continue_inserting_main);
-        }
 
+            textForItemsInsert.setText(R.string.continue_inserting_main);
+        }else {
+
+        }
         textUsername.setText(getString(R.string.hello_again)+" "+email);
         getSupportActionBar().hide();
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

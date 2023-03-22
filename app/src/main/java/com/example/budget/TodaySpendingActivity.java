@@ -179,9 +179,7 @@ public class TodaySpendingActivity extends AppCompatActivity {
 
                 String Amount=amount.getText().toString();
                 String Item="";
-                if(itemSpinner.getSelectedItem().toString().equals("Категория")){
 
-                }
                 switch (itemSpinner.getSelectedItem().toString()){
                     case "Транспорт":
                         Item="Transport";
@@ -225,7 +223,10 @@ public class TodaySpendingActivity extends AppCompatActivity {
                     return;
                 }else if(Item.equals("Select item")){
                     Toast.makeText(TodaySpendingActivity.this, R.string.SelecetvalidItem,Toast.LENGTH_LONG).show();
-                }  else if(TextUtils.isEmpty(notes)){
+                }else  if(itemSpinner.getSelectedItem().toString().equals("Select item")||itemSpinner.getSelectedItem().toString().equals("Категория")){
+                    Toast.makeText(TodaySpendingActivity.this, R.string.select_valid_item ,Toast.LENGTH_LONG).show();
+                    return;}
+                else if(TextUtils.isEmpty(notes)){
                     note.setError(getString(R.string.NoteReq));
                 }
                 else{

@@ -41,18 +41,13 @@ public class GetRef {
 
         DatabaseReference  nodeRef = FirebaseDatabase.getInstance("https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/").getReference("expense").child(onlineUserId);
         final boolean[] flag = new boolean[1];
+
         Query query = nodeRef;
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+            flag[0]= dataSnapshot.exists();
 
-                if (dataSnapshot.exists()) {
-
-                    flag[0] = true;
-                } else {
-
-                    flag[0] = false;
-                }
             }
 
             @Override
@@ -73,12 +68,14 @@ public class GetRef {
     public static Query getBudgetQuery(String item){
 
         DatabaseReference ref = FirebaseDatabase.getInstance("https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/").getReference("budget").child(onlineUserId);
+
         return  ref.orderByChild("item").equalTo(item);
 
     }
     public static Query getQueryByDate(String date){
 
         DatabaseReference ref= FirebaseDatabase.getInstance("https://budgetapp-3b284-default-rtdb.europe-west1.firebasedatabase.app/").getReference("expense").child(onlineUserId);
+
         return  ref.orderByChild("date").equalTo(date);
     }  public static DatabaseReference getBudgetRef(){
          FirebaseAuth firebaseAuth =FirebaseAuth.getInstance();
